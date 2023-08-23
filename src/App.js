@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { AiOutlineMenu } from "react-icons/ai";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <header>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          height: "3rem",
+          backgroundColor: "white",
+          padding: "0 1.5rem",
+        }}
+      >
+        <AiOutlineMenu size="20px" />
+      </div>
+    </header>
   );
 }
 
