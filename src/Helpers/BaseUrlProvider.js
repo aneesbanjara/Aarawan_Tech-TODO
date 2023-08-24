@@ -21,7 +21,7 @@ const HeaderData = async (update = false) => {
   }
 };
 
-axios.defaults.baseURL = "http://13.127.139.254:8080/khrouch/v1/api/admin";
+axios.defaults.baseURL = "http://localhost:8000";
 
 export const Api = async (action) => {
   let response = null;
@@ -29,6 +29,7 @@ export const Api = async (action) => {
     action.type_data.method === "POST" ||
     action.type_data.method === "post"
   ) {
+    console.log("from baseurl", action);
     response = await axios.post(action.type_data.endPoint, action.payload, {
       headers: await HeaderData(action.type_data.multipartFormData),
     });

@@ -5,11 +5,16 @@ import { Api } from "../Helpers/BaseUrlProvider";
 
 export const AllEpic = (action$) =>
   action$.pipe(
-    ofType("ADMIN_AUTHENTICATION_REQUEST"),
+    ofType(
+      "FETCH_ALL_TODOS_REQUEST",
+      "ADD_TODO_REQUEST",
+      "UPDATE_TODO_REQUEST",
+      "DELETE_TODO_REQUEST",
+      "TOGGLE_TODO_STATUS_REQUEST"
+    ),
     mergeMap((action) =>
       from(Api(action)).pipe(
         mergeMap((response) => {
-          console.log(response, "allepicsss");
           if (action.type_data.successInternalState) {
             action.type_data.successInternalState(response.data);
           }
